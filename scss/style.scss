@@ -1,0 +1,150 @@
+@import "__variables.scss";
+@import "__mixins.scss";
+
+//Common styles
+
+body {
+	background-color: $white;
+}
+
+.wrapper {
+	@include wh(1180px);
+	margin: 0 auto;
+}
+
+//Header styles
+
+.header {
+	background: url('../img/header/bg.jpg') no-repeat center, rgba(31, 32, 33, 0.79);
+	background-size: cover;
+	a {
+		@include links;
+		@include text(18px, 22px, $white);
+		&:not(:last-child) {
+			padding-right: 75px;
+		}
+	}
+	h2 {
+		@include text(38px, 46px, $white, bold);
+	}
+	h3 {
+		@include text(24px, 29px, $white, bold);
+	}
+	p {
+		@include text(18px, 22px, $white);
+	}
+	.header__wrapper {
+		@include flex;
+		@include flexPack;
+		padding: 40px 0px 65px;
+	}
+	.header__top {
+		@include flex;
+	}
+	.header__top {
+		padding-bottom: 50px;
+	}
+	.header__logo {
+		padding-right: 120px;
+	}
+	.header__items {
+		padding: 25px 0px 3px;
+		text-align: right;
+	}
+}
+
+//Main styles
+
+.main {
+	.main__wrapper {
+		@include flexColumn;
+	}
+	.sorted-by {
+		@include flex {
+			justify-content: flex-start;
+		}
+		margin: 37px 0px;
+		p {
+			@include text(18px, 22px, $black, bold);
+			margin-right: 50px;
+		}
+		a {
+			@include links;
+			@include text(18px, 22px, $black, normal);
+			margin-right: 15px;
+		}
+		img {
+			&:not(.price) {
+				margin-right: 50px;
+			}
+		}
+	}
+	.main__content {
+		@include flex;
+	}
+	.group__info-left {
+		img {
+			margin-right: 18px;
+		}
+	}
+	.main__item {
+		@include wh(380px);
+		:not(:last-child) {
+			@include flexPack;
+		}
+		background-color: $darkWhite;
+		margin-bottom: 50px;
+		h3 {
+			@include text(24px, 29px, $black, bold);
+			padding-bottom: 20px;
+		}
+		h4 {
+			@include text(22px, 29px, $black, bold);
+			padding-bottom: 30px;
+		}
+		p {
+			@include text(12px, 15px, $black, normal);
+		}
+		a:not(.main__item-favorites) {
+			transition: .3s all;
+			cursor: pointer;
+			text-decoration: none;
+			@include text(16px, 20px, $black, bold);
+			padding: 20px 160px;
+			background-color: $blue;
+			border-radius: 0 0 8px 8px;
+			&:hover, &:active, &:focus {
+				background-color: $darkBlue;
+			}
+		}
+	}
+	.main__item-favorites {
+		@include links;
+	}
+	.main__item-favorites {
+		position: absolute;
+		top: 35px;
+	}
+	.group__info-bold {
+		@include text(16px, 20px, $black, bold);
+	}
+	.main__item-wrapper {
+		padding: 29px;
+	}
+	.main__item-group {
+		@include flex;
+		padding-bottom: 20px;
+	}
+	.group__info-left {
+		@include flex;
+	}
+	.main__showMore {
+		@include links;
+		@include text(14px, 17px, $black, normal);
+		padding: 25px 125px;
+		border: 1px solid #CACACA;
+		box-sizing: border-box;
+		border-radius: 10px;
+		margin: 40px 5px;
+	}
+}
