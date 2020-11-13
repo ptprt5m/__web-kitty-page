@@ -31,7 +31,7 @@
 @mixin flexPack {
   text-align: left;
   align-items: flex-start;
-  @content
+  @content;
 }
 
 @mixin links($opacity: 65%, $tr: .3s all) {
@@ -50,5 +50,22 @@
 
 @mixin tl($t: auto, $l:auto) {
 	top: $t;
-	left: $l
+	left: $l;
+}
+
+@mixin btn($color: $white, $cursor: default, $br...) {
+	background-color: $color;
+	cursor: $cursor;
+	border-radius: $br;
+}
+
+@mixin add($pos, $z, $m...) {
+	position: $pos;
+	z-index: $z;
+	margin: $m;
+}
+
+@mixin radius($br, $p...) {
+	border-radius: $br;
+	padding: $p;
 }

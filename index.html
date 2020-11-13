@@ -1,204 +1,218 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Cats shop</title>
 	<link rel="stylesheet" href="/css/reset.css">
 	<link rel="stylesheet" href="/css/fonts.css">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/screen.css">
-</head>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicons//favicon-16x16.png">
+	<link rel="manifest" href="img/favicons//site.webmanifest">
+	<link rel="mask-icon" href="img/favicons//safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#603cba">
+	<meta name="theme-color" content="#ffffff"> </head>
+
 <body>
 	<header class="header">
-		<div class="wrapper">
-			<div class="header__wrapper">
-				<div class="header__left">
-					<div class="header__top">
-						<div class="header__logo">
-							<img src="img/logo/logo.png" alt="logo">
+		<div class="header__blur">
+			<div class="wrapper">
+				<div class="header__wrapper">
+					<div class="header__left-position">
+						<div class="header__top-position">
+							<div class="header__logo"> <img src="img/logo/logo.png" alt="logo"> </div>
+							<nav class="header__nav"> <a href="#!">Main</a> <a href="#!">Gallery</a> <a href="#!">News</a> <a href="#!">Profile</a> </nav>
 						</div>
-						<nav class="header__nav">
-							<a href="#!">Main</a>
-							<a href="#!">Gallery</a>
-							<a href="#!">News</a>
-							<a href="#!">Profile</a>
-						</nav>
-					</div>
-					<h2 class="header__items-title">
+						<h2 class="header__items-title">
 						Найдено 349 котов
-					</h2>
-				</div>
-				<div class="header__right">
-					<div class="header__items">
-						<h3 class="header__items-tel">
+					</h2> </div>
+					<div class="header__right-position">
+						<div class="header__items">
+							<h3 class="header__items-tel">
 							+544 3490 00000
 						</h3>
-						<p class="header__items-act">
-							Звони скорее!
-						</p>
+							<p class="header__items-act"> Звони скорее! </p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</header>
-
 	<section class="main">
 		<div class="wrapper">
 			<div class="main__wrapper">
-				<div class="sorted-by">
-				<p>Сортировать по:</p>
-				<div class="sorted-by__item price">
-					<a href="#!">Цене</a>
-					<img src="img/main/Vector.png" alt="sorted by">
+				<a href="#" title="Наверх" class="up" id="up"> <img src="img/main/up.png" alt="Наверх"> </a>
+				<div class="main__wrapper-content">
+					<div class="main__wrapper-sortedBy">
+						<p>Сортировать по:</p>
+						<div class="main__wrapper-sortedBy price"> <a onclick="price()" class="sortedBy__link">Цене</a> <img src="img/main/Vector.png" alt="sorted by" id="price"> </div>
+						<div class="main__wrapper-sortedBy"> <a onclick="age()" class="sortedBy__link">Возрасту</a> <img src="img/main/Vector.png" alt="sorted by" id="age"> </div>
+					</div>
+					<div class="main__content">
+						<div class="main__item">
+							<div class="main__item-sale">
+								<p>-40%</p>
+							</div>
+							<a href="#!" class="main__item-favorites" title="Добавить в избранное"> <img src="img/main/Favorites.png" alt="Favorites"> </a> <img src="img/main/cats/cat1-min.jpg" alt="Cat">
+							<div class="main__item-wrapper">
+								<h3 class="main__catsName">Кот полосатый</h3>
+								<div class="main__item-group">
+									<div class="group__info-left"> <img src="img/main/line.png" alt="Line">
+										<p>Коричневый
+											<br/> окрас</p>
+									</div>
+									<div class="group__info">
+										<p class="group__info-bold">2 мес.</p>
+										<p>Возраст</p>
+									</div>
+									<div class="group__info">
+										<p class="group__info-bold">4</p>
+										<p>Кол-во лап</p>
+									</div>
+								</div>
+								<h4>30 000 руб.</h4> </div>
+							<div class="main__item-action"> <a href="#!">Купить</a> </div>
+						</div>
+						<div class="main__item">
+							<a href="#!" class="main__item-favorites favorite"> <img src="img/main/Favorites.png" alt="Favorites"> </a> <img src="img/main/cats/cat2-min.jpg" alt="Cat">
+							<div class="main__item-wrapper">
+								<h3 class="main__catsName">Кот игривый</h3>
+								<div class="main__item-group">
+									<div class="group__info-left"> <img src="img/main/line.png" alt="Line">
+										<p>Коричневый
+											<br/> окрас</p>
+									</div>
+									<div class="group__info">
+										<p class="group__info-bold">2 мес.</p>
+										<p>Возраст</p>
+									</div>
+									<div class="group__info">
+										<p class="group__info-bold">4</p>
+										<p>Кол-во лап</p>
+									</div>
+								</div>
+								<h4>40 000 руб.</h4> </div>
+							<div class="main__item-action sold-out"> <a href="#!">Продан</a> </div>
+						</div>
+						<div class="main__item">
+							<a href="#!" class="main__item-favorites"> <img src="img/main/Favorites.png" alt="Favorites"> </a> <img src="img/main/cats/cat3-min.jpg" alt="Cat">
+							<div class="main__item-wrapper">
+								<h3 class="main__catsName">Кот хмурый</h3>
+								<div class="main__item-group">
+									<div class="group__info-left"> <img src="img/main/line.png" alt="Line">
+										<p>Коричневый
+											<br/> окрас</p>
+									</div>
+									<div class="group__info">
+										<p class="group__info-bold">2 мес.</p>
+										<p>Возраст</p>
+									</div>
+									<div class="group__info">
+										<p class="group__info-bold">4</p>
+										<p>Кол-во лап</p>
+									</div>
+								</div>
+								<h4>20 000 руб.</h4> </div>
+							<div class="main__item-action"> <a href="#!">Купить</a> </div>
+						</div>
+						<div class="main__item">
+							<a href="#!" class="main__item-favorites"> <img src="img/main/Favorites.png" alt="Favorites"> </a> <img src="img/main/cats/cat1-min.jpg" alt="Cat">
+							<div class="main__item-wrapper">
+								<h3 class="main__catsName">Кот полосатый</h3>
+								<div class="main__item-group">
+									<div class="group__info-left"> <img src="img/main/line.png" alt="Line">
+										<p>Коричневый
+											<br/> окрас</p>
+									</div>
+									<div class="group__info">
+										<p class="group__info-bold">2 мес.</p>
+										<p>Возраст</p>
+									</div>
+									<div class="group__info">
+										<p class="group__info-bold">4</p>
+										<p>Кол-во лап</p>
+									</div>
+								</div>
+								<h4>25 000 руб.</h4> </div>
+							<div class="main__item-action"> <a href="#!">Купить</a> </div>
+						</div>
+						<div class="main__item">
+							<div class="main__item-sale">
+								<p>-25%</p>
+							</div>
+							<a href="#!" class="main__item-favorites"> <img src="img/main/Favorites.png" alt="Favorites"> </a> <img src="img/main/cats/cat3-min.jpg" alt="Cat">
+							<div class="main__item-wrapper">
+								<h3 class="main__catsName">Кот хмурый</h3>
+								<div class="main__item-group">
+									<div class="group__info-left"> <img src="img/main/line.png" alt="Line">
+										<p>Коричневый
+											<br/> окрас</p>
+									</div>
+									<div class="group__info">
+										<p class="group__info-bold">2 мес.</p>
+										<p>Возраст</p>
+									</div>
+									<div class="group__info">
+										<p class="group__info-bold">4</p>
+										<p>Кол-во лап</p>
+									</div>
+								</div>
+								<h4>30 000 руб.</h4> </div>
+							<div class="main__item-action"> <a href="#!">Купить</a> </div>
+						</div>
+						<div class="main__item">
+							<a href="#!" class="main__item-favorites favorite"> <img src="img/main/Favorites.png" alt="Favorites"> </a> <img src="img/main/cats/cat2-min.jpg" alt="Cat">
+							<div class="main__item-wrapper">
+								<h3 class="main__catsName">Кот игривый</h3>
+								<div class="main__item-group">
+									<div class="group__info-left"> <img src="img/main/line.png" alt="Line">
+										<p>Коричневый
+											<br/> окрас</p>
+									</div>
+									<div class="group__info">
+										<p class="group__info-bold">2 мес.</p>
+										<p>Возраст</p>
+									</div>
+									<div class="group__info">
+										<p class="group__info-bold">4</p>
+										<p>Кол-во лап</p>
+									</div>
+								</div>
+								<h4>10 000 руб.</h4> </div>
+							<div class="main__item-action sold-out"> <a href="#!">Продан</a> </div>
+						</div>
+					</div>
+				</div> <a href="#!" class="main__showMore">
+                Показать еще 20
+            </a> </div>
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="wrapper">
+			<div class="footer__wrapper">
+				<div class="footer__wrapper-text">
+					<h3>
+					Успей купить!
+				</h3>
+					<p>Подпишись и успей словить все акции</p>
 				</div>
-				<div class="sorted-by__item">
-					<a href="#!">Возрасту</a>
-					<img src="img/main/Vector.png" alt="sorted by">
+				<div class="footer__wrapper-form">
+					<div class="form__item">
+						<input type="email" placeholder="Email"> <a href="#!">Подписаться</a> </div>
+					<div class="form__item-news">
+						<input type="checkbox" class="checkbox" id="checkbox">
+						<label for="checkbox"> Подписаться на новости </label>
+					</div>
 				</div>
-			</div>
-			<div class="main__content">
-				<div class="main__item">
-					<img src="img/main/cats/cat1.jpg" alt="Cat">
-					<a href="#!" class="main__item-favorites">
-						<img src="img/main/Favorites.png" alt="Favorites">
-					</a>
-					<div class="main__item-wrapper">
-						<h3 class="main__catsName">Кот полосатый</h3>
-					    <div class="main__item-group">
-						    <div class="group__info-left">
-						    	<img src="img/main/line.png" alt="Line">
-						        <p>Коричневый <br /> окрас</p>
-						    </div>
-					    	<div class="group__info">
-						    	<p class="group__info-bold">2 мес.</p>
-						        <p>Возраст</p>
-						    </div>
-						    <div class="group__info">
-						    	<p class="group__info-bold">4</p>
-						        <p>Кол-во лап</p>
-						    </div>
-				    	</div>
-				    	<h4>30 000 руб.</h4>
-				    </div>
-	                <a href="#!">Купить</a>
-				</div>
-				<div class="main__item">
-					<img src="img/main/cats/cat1.jpg" alt="Cat">
-					<div class="main__item-wrapper">
-						<h3 class="main__catsName">Кот полосатый</h3>
-					    <div class="main__item-group">
-						    <div class="group__info-left">
-						    	<img src="img/main/line.png" alt="Line">
-						        <p>Коричневый <br /> окрас</p>
-						    </div>
-					    	<div class="group__info">
-						    	<p class="group__info-bold">2 мес.</p>
-						        <p>Возраст</p>
-						    </div>
-						    <div class="group__info">
-						    	<p class="group__info-bold">4</p>
-						        <p>Кол-во лап</p>
-						    </div>
-				    	</div>
-				    	<h4>30 000 руб.</h4>
-				    </div>
-	                <a href="#!">Купить</a>
-				</div>
-				<div class="main__item">
-					<img src="img/main/cats/cat1.jpg" alt="Cat">
-					<div class="main__item-wrapper">
-						<h3 class="main__catsName">Кот полосатый</h3>
-					    <div class="main__item-group">
-						    <div class="group__info-left">
-						    	<img src="img/main/line.png" alt="Line">
-						        <p>Коричневый <br /> окрас</p>
-						    </div>
-					    	<div class="group__info">
-						    	<p class="group__info-bold">2 мес.</p>
-						        <p>Возраст</p>
-						    </div>
-						    <div class="group__info">
-						    	<p class="group__info-bold">4</p>
-						        <p>Кол-во лап</p>
-						    </div>
-				    	</div>
-				    	<h4>30 000 руб.</h4>
-				    </div>
-	                <a href="#!">Купить</a>
-				</div>
-				<div class="main__item">
-					<img src="img/main/cats/cat1.jpg" alt="Cat">
-					<div class="main__item-wrapper">
-						<h3 class="main__catsName">Кот полосатый</h3>
-					    <div class="main__item-group">
-						    <div class="group__info-left">
-						    	<img src="img/main/line.png" alt="Line">
-						        <p>Коричневый <br /> окрас</p>
-						    </div>
-					    	<div class="group__info">
-						    	<p class="group__info-bold">2 мес.</p>
-						        <p>Возраст</p>
-						    </div>
-						    <div class="group__info">
-						    	<p class="group__info-bold">4</p>
-						        <p>Кол-во лап</p>
-						    </div>
-				    	</div>
-				    	<h4>30 000 руб.</h4>
-				    </div>
-	                <a href="#!">Купить</a>
-				</div>
-				<div class="main__item">
-					<img src="img/main/cats/cat1.jpg" alt="Cat">
-					<div class="main__item-wrapper">
-						<h3 class="main__catsName">Кот полосатый</h3>
-					    <div class="main__item-group">
-						    <div class="group__info-left">
-						    	<img src="img/main/line.png" alt="Line">
-						        <p>Коричневый <br /> окрас</p>
-						    </div>
-					    	<div class="group__info">
-						    	<p class="group__info-bold">2 мес.</p>
-						        <p>Возраст</p>
-						    </div>
-						    <div class="group__info">
-						    	<p class="group__info-bold">4</p>
-						        <p>Кол-во лап</p>
-						    </div>
-				    	</div>
-				    	<h4>30 000 руб.</h4>
-				    </div>
-	                <a href="#!">Купить</a>
-				</div>
-				<div class="main__item">
-					<img src="img/main/cats/cat1.jpg" alt="Cat">
-					<div class="main__item-wrapper">
-						<h3 class="main__catsName">Кот полосатый</h3>
-					    <div class="main__item-group">
-						    <div class="group__info-left">
-						    	<img src="img/main/line.png" alt="Line">
-						        <p>Коричневый <br /> окрас</p>
-						    </div>
-					    	<div class="group__info">
-						    	<p class="group__info-bold">2 мес.</p>
-						        <p>Возраст</p>
-						    </div>
-						    <div class="group__info">
-						    	<p class="group__info-bold">4</p>
-						        <p>Кол-во лап</p>
-						    </div>
-				    	</div>
-				    	<h4>30 000 руб.</h4>
-				    </div>
-	                <a href="#!">Купить</a>
-				</div>
-			</div>
-			<a href="#!" class="main__showMore">
-				Показать еще 20
-			</a>
 			</div>
 		</div>
-	</section>			
+	</footer>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="js/main.min.js"></script>
 </body>
+
 </html>

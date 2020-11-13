@@ -1,0 +1,78 @@
+@import '__mixins.scss';
+
+@media screen and (max-width: 1240px) {
+    .wrapper {
+        @include wh(800px);
+    }
+    .header__wrapper {
+        h2 {
+            text-align: right;
+            flex-wrap: wrap;
+        }
+    }
+    .header__right-position, .header__left-position {
+        width: 100%;
+        text-align: right;
+    }
+    .footer {
+        .footer__wrapper {
+            padding: 50px 70px;
+        }
+        .footer__wrapper_form {
+            a {
+                padding: 22px 70px;
+            }
+        }
+    }
+    .form__item {
+        @include flexColumn {
+            align-items: flex-start;
+        }
+        input {
+            margin: 20px 0px;
+        }
+        a {
+            padding: 22px 70px;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper {
+        @include wh(600px);
+    }
+    .header {
+        .header__items {
+            padding-top: 30px;
+            text-align: left;
+        }
+    }
+    .header__logo {
+        margin-bottom: 30px;
+    }
+    .header__wrapper h2 {
+        text-align: left;
+    }
+    .main {
+        .main__content {
+            @include flexColumn;
+            margin: auto;
+        }
+    }
+    .footer {
+        background: $lightBlack;
+        .footer__wrapper {
+            @include flexColumn;
+            margin: auto;
+        }
+        .footer__wrapper-form {
+            padding-top: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .wrapper {
+        @include wh(400px);
+    }
+}

@@ -12,10 +12,19 @@ body {
 	margin: 0 auto;
 }
 
+.up {
+	padding: 18px;
+	background: $blue;
+	position: fixed;
+	right: 45px;
+	bottom: 45px;
+	z-index: 999;
+}
+
 //Header styles
 
 .header {
-	background: url('../img/header/bg.jpg') no-repeat center, rgba(31, 32, 33, 0.79);
+	background: url('../img/header/bg-min.jpg') no-repeat center;
 	background-size: cover;
 	a {
 		@include links;
@@ -33,15 +42,16 @@ body {
 	p {
 		@include text(18px, 22px, $white);
 	}
+	.header__blur {
+		background: rgba(31, 32, 33, 0.79);
+	}
 	.header__wrapper {
 		@include flex;
 		@include flexPack;
 		padding: 40px 0px 65px;
 	}
-	.header__top {
+	.header__top-position {
 		@include flex;
-	}
-	.header__top {
 		padding-bottom: 50px;
 	}
 	.header__logo {
@@ -59,7 +69,10 @@ body {
 	.main__wrapper {
 		@include flexColumn;
 	}
-	.sorted-by {
+	.main__wrapper-content {
+		@include flex;
+	}
+	.main__wrapper-sortedBy {
 		@include flex {
 			justify-content: flex-start;
 		}
@@ -74,6 +87,13 @@ body {
 			margin-right: 15px;
 		}
 		img {
+			transition: .3s all;
+			&:not(.price) {
+				margin-right: 50px;
+			}
+		}
+		.active {
+			transform: rotate(180deg);
 			&:not(.price) {
 				margin-right: 50px;
 			}
@@ -82,7 +102,13 @@ body {
 	.main__content {
 		@include flex;
 	}
+	.group__info {
+		.group__info-bold {
+			@include text(16px, 20px, $black, bold);
+		}
+	}
 	.group__info-left {
+		@include flex;
 		img {
 			margin-right: 18px;
 		}
@@ -94,6 +120,14 @@ body {
 		}
 		background-color: $darkWhite;
 		margin-bottom: 50px;
+		overflow: hidden;
+		img {
+			transition: .3s all;
+			cursor: pointer;
+			&:hover, &:active, &:focus {
+				transform: scale(1.05);
+			}
+		}
 		h3 {
 			@include text(24px, 29px, $black, bold);
 			padding-bottom: 20px;
@@ -106,27 +140,51 @@ body {
 			@include text(12px, 15px, $black, normal);
 		}
 		a:not(.main__item-favorites) {
-			transition: .3s all;
-			cursor: pointer;
+			@include text(16px, 20px, $white, bold);
+			@include radius(0 0 8px 8px, 20px 159px 20px 160px);
 			text-decoration: none;
-			@include text(16px, 20px, $black, bold);
-			padding: 20px 160px;
-			background-color: $blue;
-			border-radius: 0 0 8px 8px;
-			&:hover, &:active, &:focus {
-				background-color: $darkBlue;
-			}
+		}
+	}
+	.main__item-action {
+		@include wh(100%, 60px);
+		@include flexColumn;
+		@include btn($blue, pointer, 0 0 8px 8px);
+		transition: .3s all;
+		&:hover, &:active, &:focus {
+			background-color: $darkBlue;
+		}
+	}
+	.sold-out {
+		@include wh(100%, 60px);
+		@include flexColumn;
+		@include btn($lightBlack, default, 0 0 8px 8px);
+		&:hover, &:active, &:focus {
+			background-color: $lightBlack;
+		}
+	}
+	.main__item-sale {
+		@include wh(80px, 40px);
+		@include flex;
+		@include add(absolute, 99, 25px 0 5px 20px);
+		background: $red;
+		border-radius: 10px;
+		position: absolute;
+		margin: 25px 0px 5px 20px;
+		z-index: 99;
+		p {
+			@include text(16px, 20px, $white, normal);
+			margin: auto;
 		}
 	}
 	.main__item-favorites {
-		@include links;
+		opacity: 50%;
+		@include links(80%);
+		@include add(absolute, 99, 25px 0px 5px 305px);
 	}
-	.main__item-favorites {
-		position: absolute;
-		top: 35px;
-	}
-	.group__info-bold {
-		@include text(16px, 20px, $black, bold);
+	.favorite {
+		opacity: 100%;
+		@include links(100%);
+		@include add(absolute, 99, 25px 0px 5px 305px);
 	}
 	.main__item-wrapper {
 		padding: 29px;
@@ -135,16 +193,58 @@ body {
 		@include flex;
 		padding-bottom: 20px;
 	}
-	.group__info-left {
-		@include flex;
-	}
 	.main__showMore {
-		@include links;
+		@include links(55%);
 		@include text(14px, 17px, $black, normal);
-		padding: 25px 125px;
+		@include radius(10px, 25px 125px);
 		border: 1px solid #CACACA;
 		box-sizing: border-box;
-		border-radius: 10px;
-		margin: 40px 5px;
+		margin: 0px 5px 40px;
+	}
+}
+
+.footer {
+	.footer__wrapper {
+		@include flex;
+		@include flexPack;
+		background: $lightBlack;
+		padding: 90px 80px;
+	}
+	h3 {
+		@include text(48px, 59px, $white, bold);
+		padding-bottom: 25px;
+	}
+	.footer__wrapper-text {
+		@include wh(40%);
+		flex-wrap: wrap;
+		p {
+			@include text(28px, 91.2%, $white, normal);
+		}
+	}
+	.form__item, .form__item-news {
+		@include flex;
+		margin-bottom: 25px;
+	}
+	.checkbox {
+		@include wh(35px, 35px);
+	}
+	.footer__wrapper-form {
+		@include flexColumn;
+		@include flexPack;
+		input {
+			@include text(14px, 17px, $black, normal);
+			@include radius(10px, 22px 33px);
+			border: 0;
+			margin-right: 15px;
+		}
+		a {
+			@include links(80%);
+			@include text(14px, 17px, $white, bold);
+			@include radius(10px, 22px 75px);
+			background: $blue;
+		}
+		label {
+			@include text(14px, 17px, $white, normal);
+		}
 	}
 }
